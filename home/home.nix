@@ -40,11 +40,20 @@
       # "myfile".source = ./../myfile;
 
 
+      # Keep dotfiles in NixOS dir but link them to ~/.config
       ".config" = {
           enable = true;
           recursive = true;
           source = ./../dotfiles;
       };
+
+
+      # Keep zsh config in NixOS dotfiles dir but also link it to ~/.zshrc
+      ".zshrc" = {
+          enable = true;
+          source = ./../dotfiles/zsh/zshrc;
+      };
+
 
 
 
