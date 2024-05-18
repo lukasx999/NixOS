@@ -1,2 +1,0 @@
-#!/bin/zsh
-curl -s "wttr.in/?format=%m"

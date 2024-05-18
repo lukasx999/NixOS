@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-official=$(pacman -Qu | wc -l)
-echo  $official

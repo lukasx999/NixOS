@@ -28,6 +28,14 @@
 
 
 
+  home.sessionVariables = {
+      ZDOTDIR = "~/.config/zsh";
+  };
+
+
+
+
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -42,7 +50,7 @@
 
       # Keep dotfiles in NixOS dir but link them to ~/.config
       ".config" = {
-          enable = true;
+          enable = false;
           recursive = true;
           source = ./../dotfiles;
       };
@@ -50,11 +58,9 @@
 
       # Keep zsh config in NixOS dotfiles dir but also link it to ~/.zshrc
       ".zshrc" = {
-          enable = true;
+          enable = false;
           source = ./../dotfiles/zsh/zshrc;
       };
-
-
 
 
 
