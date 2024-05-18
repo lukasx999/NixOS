@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
       inputs.home-manager.nixosModules.home-manager
 
       ./packages.nix
+      ./fonts.nix
     ];
 
 
@@ -62,6 +63,10 @@
     LC_TIME = "de_AT.UTF-8";
   };
 
+
+
+
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -75,6 +80,7 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
+
 
 
 
@@ -96,28 +102,6 @@
 
 
 
-fonts.packages = with pkgs; [
-        ubuntu_font_family
-        jetbrains-mono
-        roboto
-        roboto-mono
-        font-awesome_5
-        font-awesome
-        roboto-slab
-        roboto-serif
-        nerdfonts
-        hack-font
-        iosevka
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-        liberation_ttf
-        fira-code
-        fira-code-symbols
-        mplus-outline-fonts.githubRelease
-        dina-font
-        proggyfonts
-];
 
 
 
@@ -150,7 +134,8 @@ fonts.packages = with pkgs; [
 
 
   # Install OpenRGB
-  # services.hardware.openrgb.enable = true;
+  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb.motherboard = "intel";
 
 
 

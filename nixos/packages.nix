@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ inputs, config, lib, pkgs, ...}:
 
 {
 
@@ -61,7 +61,7 @@
     chromium
     spotify
     vscode
-    openrgb
+    # openrgb
     emacs
     neovide
     nsxiv

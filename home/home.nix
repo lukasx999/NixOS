@@ -40,11 +40,11 @@
       # "myfile".source = ./../myfile;
 
 
-      # "myconfig" = {
-      #     enable = true;
-      #     recursive = true;
-      #     source = ./../dotfiles;
-      # };
+      ".config" = {
+          enable = true;
+          recursive = true;
+          source = ./../dotfiles;
+      };
 
 
 
