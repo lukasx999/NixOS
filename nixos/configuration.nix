@@ -41,6 +41,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+
+
+
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
@@ -65,6 +68,32 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+
+
+  # Bluetooth support
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+
+
+
+  # Redshift
+  location.provider = "geoclue2";
+  # All values except 'enable' are optional.
+  services.redshift = {
+    enable = true;
+    brightness = {
+      # Note the string values below.
+      day = "1";
+      night = "1";
+    };
+    temperature = {
+      day = 5700;  # 5500
+      night = 4500;  # 3700
+    };
+    };
+
 
 
   # Enable OpenGL
@@ -221,122 +250,6 @@ fonts.packages = with pkgs; [
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-
-    # NixOS
-    home-manager
-
-    # Programming
-    python3
-    libgcc
-    gcc
-    go
-    ruby
-    # gcc13
-    rocmPackages.llvm.clang
-    gnumake
-    cmake
-    python311Packages.ptpython
-    # lua54Packages.luarocks-nix
-    luajitPackages.luarocks
-    virtualenv
-    # python312Packages.pynvim
-    luajit
-    conda
-    lua
-    direnv
-    luau
-    nodejs
-    rustc
-    cargo
-    tree-sitter
-
-
-    # Wayland
-    swww
-    waybar
-    inotify-tools
-    mako
-    pyprland
-    hyprlock
-    wlogout
-    gamescope
-
-
-    # Etc
-    mangohud
-    protonup  # For Proton GE fork
-
-    # Nvim LSP
-    black
-    isort
-    stylua 
-
-
-    # Apps
-    chromium
-    spotify
-    vscode
-    openrgb
-    emacs
-    neovide
-    nsxiv
-    mupdf
-
-    # Fun programs
-    neofetch
-    cowsay
-    figlet
-    cmatrix
-
-    # zsh
-    # zplug
-    # zsh-fast-syntax-highlighting
-    # zsh-vi-mode
-    # zsh-autosuggestions
-    # zsh-autopair
-    dash
-    rofi-wayland
-    lutris
-    alacritty
-    kitty
-
-
-    # Terminal images
-    ueberzugpp
-    libsixel
-    lsix
-
-    # Shell tools
-    file
-    tree
-    bat-extras.batman
-    starship
-    unzip
-    fzf
-    entr
-    xclip
-    wl-clipboard
-    fd
-    ranger
-    lf
-    neovim
-    htop
-    btop
-    gotop
-    eza
-    git
-    vim
-    wget
-    ripgrep
-    jq
-    tldr
-    bat
-    lm_sensors
-
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

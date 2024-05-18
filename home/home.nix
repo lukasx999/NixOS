@@ -31,18 +31,20 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-      "helloworld" = {
-          enable = true;
-          text = "helloworld!!!!!";
-      };
+      # "helloworld" = {
+      #     enable = true;
+      #     text = "helloworld!!!!!";
+      # };
+
 
       # "myfile".source = ./../myfile;
 
-      "myconfig" = {
-          enable = true;
-          recursive = true;
-          source = ./../dotfiles;
-      };
+
+      # "myconfig" = {
+      #     enable = true;
+      #     recursive = true;
+      #     source = ./../dotfiles;
+      # };
 
 
 
