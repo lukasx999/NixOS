@@ -132,15 +132,13 @@
 
   # Configure keymap in X11
   services.xserver = {
-    # Outdated
-    # layout = "de";
-    # xkbVariant = "";
+    autoRepeatDelay = 300;
+    autoRepeatInterval = 50;
 
     xkb = {
         variant = "";
         layout = "de";
     };
-
   };
 
   # Configure console keymap
@@ -222,28 +220,6 @@
   };
 
 
-fonts.packages = with pkgs; [
-        ubuntu_font_family
-        jetbrains-mono
-        roboto
-        roboto-mono
-        font-awesome_5
-        font-awesome
-        roboto-slab
-        roboto-serif
-        nerdfonts
-        hack-font
-        iosevka
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-        liberation_ttf
-        fira-code
-        fira-code-symbols
-        mplus-outline-fonts.githubRelease
-        dina-font
-        proggyfonts
-];
 
 
 
