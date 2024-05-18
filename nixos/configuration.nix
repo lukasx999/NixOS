@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
+      # ./packages.nix
     ];
 
 
@@ -29,7 +30,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "lukdt"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -200,18 +201,18 @@ fonts.packages = with pkgs; [
         font-awesome
         roboto-slab
         roboto-serif
-	nerdfonts
+        nerdfonts
         hack-font
         iosevka
-	noto-fonts
-	noto-fonts-cjk
-	noto-fonts-emoji
-	liberation_ttf
-	fira-code
-	fira-code-symbols
-	mplus-outline-fonts.githubRelease
-	dina-font
-	proggyfonts
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        mplus-outline-fonts.githubRelease
+        dina-font
+        proggyfonts
 ];
 
 
@@ -223,10 +224,8 @@ fonts.packages = with pkgs; [
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-
     # NixOS
     home-manager
-
 
     # Programming
     python3
