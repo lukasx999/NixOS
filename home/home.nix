@@ -27,13 +27,9 @@
   ];
 
 
-
   home.sessionVariables = {
-      ZDOTDIR = "~/.config/zsh";
+      # ZDOTDIR = "~/.config/zsh";
   };
-
-
-
 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
