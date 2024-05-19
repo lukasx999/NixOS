@@ -147,6 +147,8 @@
   services.hardware.openrgb.enable = true;
   services.hardware.openrgb.motherboard = "intel";
 
+  services.udev.extraRules = (builtins.readFile "${pkgs.openrgb}/lib/udev/rules.d/60-openrgb.rules");
+
 
 
 

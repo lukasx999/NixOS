@@ -11,6 +11,8 @@
   # Unstable packages
   (with pkgs; [
 
+    # Temp
+    i2c-tools
 
     # NixOS
     home-manager
@@ -19,6 +21,7 @@
     nvd  # Diff Viewer
 
     # Programming
+    platformio-core
     python3
     libgcc
     gcc
@@ -67,6 +70,7 @@
 
 
     # Apps
+    vscodium
     chromium
     spotify
     vscode

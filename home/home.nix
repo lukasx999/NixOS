@@ -35,10 +35,10 @@
 
     cursorTheme = {
         package = pkgs.bibata-cursors;
-        name = "Bibata-Original-Classic";
-        size = 16;
-    # name = "Bibata-Modern-Classic";
-    # name = "Bibata-Modern-Ice";
+        name = "Bibata-Modern-Classic";
+        # name = "Bibata-Original-Classic";
+        # name = "Bibata-Modern-Ice";
+        size = 26;
     };
 
     theme = {
