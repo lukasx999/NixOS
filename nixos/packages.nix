@@ -24,6 +24,7 @@
     gcc
     go
     ruby
+    ghc
     # gcc13
     rocmPackages.llvm.clang
     gnumake
