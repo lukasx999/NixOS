@@ -88,23 +88,27 @@
       #     text = "helloworld!!!!!";
       # };
 
-
       # "myfile".source = ./../myfile;
 
 
+      # ".local/share/zsh/zsh-vi-mode".source = 
+      # "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+
+
+
       # Keep dotfiles in NixOS dir but link them to ~/.config
-      ".config" = {
-          enable = false;
-          recursive = true;
-          source = ./../dotfiles;
-      };
+      # ".config" = {
+      #     enable = false;
+      #     recursive = true;
+      #     source = ./../dotfiles;
+      # };
 
 
       # Keep zsh config in NixOS dotfiles dir but also link it to ~/.zshrc
-      ".zshrc" = {
-          enable = false;
-          source = ./../dotfiles/zsh/zshrc;
-      };
+      # ".zshrc" = {
+      #     enable = false;
+      #     source = ./../dotfiles/zsh/zshrc;
+      # };
 
 
 

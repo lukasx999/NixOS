@@ -93,16 +93,18 @@
 
     # Fun programs
     neofetch
+    pfetch
     cowsay
     figlet
     cmatrix
 
     # zsh
     # zplug
-    # zsh-fast-syntax-highlighting
-    # zsh-vi-mode
-    # zsh-autosuggestions
-    # zsh-autopair
+    zsh-fast-syntax-highlighting
+    zsh-vi-mode
+    zsh-autosuggestions
+    zsh-autopair
+
     dash
     rofi-wayland
     lutris
