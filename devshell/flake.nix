@@ -1,15 +1,35 @@
 {
-  description = "A very basic flake";
+  description = "A simple dev shell";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs, ... }@inputs:
+    let
+        system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+        devShells.x86_64-linux.default = pkgs.mkShell {
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+            nativeBuildInputs = with pkgs; [
+                brave
+            ];
 
-  };
+            shellHook = ''
+                echo "welcome!!!"
+                # PS1="greetings"
+
+            '';
+
+            COLOR = "blue";
+
+
+        };
+
+    };
+
+
 }

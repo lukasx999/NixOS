@@ -27,6 +27,61 @@
   ];
 
 
+
+
+  gtk = {
+
+    enable = true;
+
+
+    # font = {
+    # package = pkgs.;
+    # name = "";
+    # size = "8";
+    # };
+
+    cursorTheme = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Original-Classic";
+        size = 16;
+    # name = "Bibata-Modern-Classic";
+    # name = "Bibata-Modern-Ice";
+    };
+
+    theme = {
+        package = pkgs.tokyo-night-gtk;
+        name = "Tokyo-Night-GTK-Theme";
+    };
+
+    iconTheme = {
+        package = pkgs.papirus-icon-theme;
+        name = "Papirus Dark";
+    };
+
+
+  };
+
+
+
+  qt = {
+      enable = true;
+
+      platformTheme = {
+          name = "gtk3";
+      };
+
+      style = {
+          package = pkgs.adwaita-qt;
+          name = "adwaita-dark";
+      };
+
+  };
+
+
+
+
+
+
   home.sessionVariables = {
       # ZDOTDIR = "~/.config/zsh";
   };

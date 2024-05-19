@@ -3,6 +3,9 @@
 {
 
   fonts.packages = with pkgs; [
+    comic-mono
+    inconsolata-nerdfont
+    inconsolata
     ubuntu_font_family
     jetbrains-mono
     roboto
