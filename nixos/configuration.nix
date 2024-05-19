@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
 
+      inputs.nix-flatpak.nixosModules.nix-flatpak  # Importing flatpak module
+
       ./packages.nix
       ./fonts.nix
     ];
@@ -199,7 +201,9 @@
 
 
 
-  services.flatpak.enable = true;
+  # Flatpaks
+  # services.flatpak.enable = true;
+
 
   # Install firefox.
   programs.firefox.enable = true;
