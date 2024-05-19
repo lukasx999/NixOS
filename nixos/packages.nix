@@ -12,7 +12,9 @@
   (with pkgs; [
 
     # Temp
+    dwt1-shell-color-scripts
     i2c-tools
+    wineWowPackages.stable
 
     # NixOS
     home-manager
@@ -21,6 +23,12 @@
     nvd  # Diff Viewer
 
     # Programming
+
+    python311Packages.pip
+    python311Packages.pyside6
+    python311Packages.selenium
+    python311Packages.icecream
+
     platformio-core
     python3
     libgcc
@@ -70,6 +78,9 @@
 
 
     # Apps
+    gimp
+    libreoffice
+    discord
     vscodium
     chromium
     spotify
