@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
 
-      inputs.nix-flatpak.nixosModules.nix-flatpak  # Importing flatpak module
+      # inputs.nix-flatpak.nixosModules.nix-flatpak  # Importing flatpak module
 
       ./packages.nix
       ./fonts.nix
@@ -18,13 +18,13 @@
 
 
 
-  home-manager = {
 
+
+  home-manager = {
       extraSpecialArgs = { inherit inputs; };
       users = {
           lukas = import ../home/home.nix;
       };
-
   };
 
 
@@ -89,6 +89,8 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
+
+  services.flatpak.enable = true;
 
 
 

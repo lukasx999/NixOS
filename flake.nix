@@ -8,7 +8,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";  # Unstable branch
+    # nix-flatpak.url = "github:gmodena/nix-flatpak";  # Unstable branch
 
 
     home-manager = {
@@ -18,7 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, ... }@inputs:
   let
     system = "x86_64-linux";
 
