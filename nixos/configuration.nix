@@ -27,6 +27,12 @@
 
 
 
+  environment.sessionVariables = {
+      FLAKE = "/home/lukas/NixOS";
+  };
+
+
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

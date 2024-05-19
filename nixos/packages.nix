@@ -1,14 +1,22 @@
-{ inputs, config, lib, pkgs, ...}:
+{ inputs, config, lib, pkgs, pkgs-stable, ...}:
 
 {
 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages =
+
+
+  # Unstable packages
+  (with pkgs; [
+
 
     # NixOS
     home-manager
+    nh  # Nix Helper
+    nix-output-monitor
+    nvd  # Diff Viewer
 
     # Programming
     python3
@@ -104,20 +112,32 @@
     fd
     ranger
     lf
-    neovim
     htop
     btop
     gotop
     eza
     git
-    vim
     wget
     ripgrep
     jq
     tldr
     bat
     lm_sensors
+    vim
+    # neovim
+    # neovim-gtk
 
-  ];
+
+
+  ])
+
+++
+
+(with pkgs-stable; [
+
+neovim
+
+
+]);
 
 }
