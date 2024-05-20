@@ -78,9 +78,28 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable startx as a pseudo display manager
+  services.xserver.displayManager.startx.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+
+  # Install Qtile
+  services.xserver.windowManager.qtile.enable = true;
+
+
+  # Install picom
+  services.picom.enable = true;
+
+
+  # Install Hyprland
+  programs.hyprland.enable = true;
+  # Optional, hint electron apps to use wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+
 
 
 
@@ -144,8 +163,12 @@
 
 
   # Install OpenRGB
-  services.hardware.openrgb.enable = true;
-  services.hardware.openrgb.motherboard = "intel";
+  services.hardware.openrgb = {
+      enable = true;
+      motherboard = "intel";
+  };
+
+  hardware.i2c.enable = true;
 
   services.udev.extraRules = (builtins.readFile "${pkgs.openrgb}/lib/udev/rules.d/60-openrgb.rules");
 
@@ -211,11 +234,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Install Hyprland
-  programs.hyprland.enable = true;
-  # Optional, hint electron apps to use wayland:
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable gamemode
   programs.gamemode.enable = true;

@@ -29,6 +29,8 @@
     python311Packages.selenium
     python311Packages.icecream
 
+    ninja
+    meson
     platformio-core
     python3
     libgcc
