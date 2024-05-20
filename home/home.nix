@@ -9,7 +9,6 @@
   # Packages
   home.packages = 
       (with pkgs; [
-       hello
       ])
 
       ++
