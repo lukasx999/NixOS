@@ -12,6 +12,8 @@
   (with pkgs; [
 
     # Temp
+    networkmanagerapplet
+    unclutter
     dwt1-shell-color-scripts
     i2c-tools
     wineWowPackages.stable

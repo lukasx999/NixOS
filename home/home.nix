@@ -35,9 +35,9 @@
 
     cursorTheme = {
         package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Classic";
+        # name = "Bibata-Modern-Classic";
         # name = "Bibata-Original-Classic";
-        # name = "Bibata-Modern-Ice";
+        name = "Bibata-Modern-Ice";
         size = 26;
     };
 
@@ -64,8 +64,11 @@
       };
 
       style = {
-          package = pkgs.adwaita-qt;
-          name = "adwaita-dark";
+          package = pkgs.catppuccin-qt5ct;
+          name = "Catppuccin-Mocha";
+
+          # package = pkgs.adwaita-qt;
+          # name = "adwaita-dark";
       };
 
   };
