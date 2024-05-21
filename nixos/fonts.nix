@@ -8,12 +8,14 @@
     inconsolata
     ubuntu_font_family
     jetbrains-mono
+    terminus-nerdfont
     roboto
     roboto-mono
-    font-awesome_5
-    font-awesome
     roboto-slab
     roboto-serif
+    font-awesome_5
+    font-awesome_4
+    font-awesome
     nerdfonts
     hack-font
     iosevka
@@ -22,6 +24,7 @@
     noto-fonts-emoji
     liberation_ttf
     fira-code
+    fira-code-nerdfont
     fira-code-symbols
     mplus-outline-fonts.githubRelease
     dina-font
