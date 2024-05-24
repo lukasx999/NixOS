@@ -27,10 +27,10 @@
 
     # Programming
 
-    python311Packages.pip
-    python311Packages.pyside6
-    python311Packages.selenium
-    python311Packages.icecream
+    # python311Packages.pip
+    # python311Packages.pyside6
+    # python311Packages.selenium
+    # python311Packages.icecream
 
     ninja
     meson
