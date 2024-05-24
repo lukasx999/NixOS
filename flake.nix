@@ -46,7 +46,6 @@
       nixosConfigurations = {
           # myNixos = nixpkgs.lib.nixosSystem {
           lukdt = nixpkgs.lib.nixosSystem {
-              # specialArgs = { inherit inputs system; };
               specialArgs = { inherit inputs system pkgs-stable; };
               modules = [
                   ./nixos/configuration.nix

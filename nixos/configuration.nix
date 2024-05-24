@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, config, pkgs, pkgs-stable, lib, ... }:
 
 {
   imports =
@@ -74,20 +74,27 @@
 
 
 
+services.xserver = {
+    # Enable the X11 windowing system.
+    enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+    # Enable startx as a pseudo display manager
+    displayManager.startx.enable = true;
 
-  # Enable startx as a pseudo display manager
-  services.xserver.displayManager.startx.enable = true;
+    # Enable the GNOME Desktop Environment.
+    displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = false;
+    desktopManager.gnome.enable = true;
+    desktopManager.gnome.debug = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+    # Enable Qtile
+    windowManager.qtile.enable = true;
+};
 
 
-  # Install Qtile
-  services.xserver.windowManager.qtile.enable = true;
+
+
 
 
   # Install picom
@@ -95,9 +102,16 @@
 
 
   # Install Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+      enable = true;
+      # package = pkgs-stable.hyprland;
+      package = pkgs.hyprland;
+      xwayland.enable = true;
+  };
   # Optional, hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+
 
 
 
@@ -249,7 +263,16 @@
 
 
   # Generate man page indexing so that apropos and man -k work
-  documentation.man.generateCaches = true;
+  documentation = {
+      enable = true;
+      man.generateCaches = true;
+
+      dev.enable = true;
+      man.enable = true;
+      doc.enable = true;
+      info.enable = true;
+      nixos.enable = true;
+  };
 
 
   # Install steam
@@ -290,12 +313,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11";
 
 }
