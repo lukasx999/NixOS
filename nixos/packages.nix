@@ -17,6 +17,7 @@
     dwt1-shell-color-scripts
     i2c-tools
     wineWowPackages.stable
+    cpio
 
     # NixOS
     home-manager
@@ -69,6 +70,7 @@
     hyprlock
     wlogout
     gamescope
+    waypaper
 
 
     # Etc
@@ -122,6 +124,7 @@
     lsix
 
     # Shell tools
+    killall
     file
     tree
     bat-extras.batman
