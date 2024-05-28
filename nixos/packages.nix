@@ -18,6 +18,8 @@
     i2c-tools
     wineWowPackages.stable
     cpio
+    hyprland-protocols
+    xdg-desktop-portal-hyprland
 
     # NixOS
     home-manager
@@ -32,6 +34,13 @@
     # python311Packages.selenium
     # python311Packages.icecream
 
+    nodePackages.pyright
+    python311Packages.cython
+    pypy310
+    pypy
+
+    python311Packages.ptpython
+
     ninja
     meson
     platformio-core
@@ -45,7 +54,6 @@
     rocmPackages.llvm.clang
     gnumake
     cmake
-    python311Packages.ptpython
     # lua54Packages.luarocks-nix
     luajitPackages.luarocks
     virtualenv
@@ -124,6 +132,8 @@
     lsix
 
     # Shell tools
+    lsof
+    onefetch
     killall
     file
     tree

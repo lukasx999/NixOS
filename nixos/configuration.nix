@@ -83,7 +83,7 @@ services.xserver = {
 
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
     desktopManager.gnome.debug = true;
 
@@ -167,7 +167,7 @@ services.xserver = {
     powerManagement.finegrained = false;
 
     # Uses the NVidia open source kernel module
-    open = false;
+    open = true;
 
     # Enable NVidia settings menu (nvidia-settings)
     nvidiaSettings = true;
